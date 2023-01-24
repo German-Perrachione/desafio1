@@ -43,7 +43,7 @@ class Product{
     getProductById(id) {
 
     if(this.products.some(p => p.id===id)){
-        return product;
+        return Product;
     }else{
         error('Producto inexistente');
     }
@@ -54,9 +54,10 @@ class Product{
 
 
 
-// let product = new Product();
+const gestor = new ProductManager()
+console.log(gestor.getProducts()); //Me devuelve un array vacio.
 
-// console.log(product)
-// console.log(product.getProducts());
-// product.addProduct('cereales', 'cereales integrales', '300', 'No Img','455as',true );
-// console.log(product.getProductById());
+gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25);
+console.log(gestor.getProducts());
+gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25);
+
