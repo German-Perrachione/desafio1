@@ -50,11 +50,9 @@ class Product{
 
 
 
-let usuario = new Product('titulo', 'descripcion','precio','imagen','codigo','stock');
+let product = new Product();
 
-Product.addProduct('latte')
-Product.addProduct('cookies')
-Product.addProduct('coffee')
-
-
-console.log(Array);
+console.log(product)
+console.log(product.getProducts());
+product.addProduct('cereales', 'cereales integrales', '300', 'No Img','455as',true );
+console.log(product.getProductById());
