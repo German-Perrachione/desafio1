@@ -25,7 +25,7 @@ class Product{
 
 }
 
-    addProduct(product){
+    addProduct = (product)=>{
 
         if(this.products.some(p => p.codigo === product.codigo)) 
             return "Error: Código de producto repetido"
@@ -33,7 +33,7 @@ class Product{
 
 }
 
-    getProducts() {
+    getProducts = () => {
 
         return this.products
 
@@ -42,7 +42,11 @@ class Product{
 
     getProductById(id) {
 
-        const productById = this.products.filter(p => p.id === id)
+    if(this.products.some(p => p.id===id)){
+        return product;
+    }else{
+        error('Producto inexistente');
+    }
 
 }
 
@@ -50,9 +54,9 @@ class Product{
 
 
 
-let product = new Product();
+// let product = new Product();
 
-console.log(product)
-console.log(product.getProducts());
-product.addProduct('cereales', 'cereales integrales', '300', 'No Img','455as',true );
-console.log(product.getProductById());
+// console.log(product)
+// console.log(product.getProducts());
+// product.addProduct('cereales', 'cereales integrales', '300', 'No Img','455as',true );
+// console.log(product.getProductById());
