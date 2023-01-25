@@ -69,6 +69,6 @@ gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imag
 
 console.log(gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25)); // Devuelve error de codigo de producto repetido
 
-console.log(gestor.getProductById(0));//Genera error o entrega el producto
+console.log(gestor.getProductById(3));//Genera error o entrega el producto
 
 
