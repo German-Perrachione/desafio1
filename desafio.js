@@ -48,7 +48,7 @@ class Product{
     if(this.products.some(p => p.id===id)){
         return Product;
     }else{
-        console.Error('Producto inexistente');
+        console.error('Producto inexistente');
     }
 
 }
@@ -65,10 +65,10 @@ gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imag
 
 console.log(gestor.getProducts()); // Muestra el producto
 
-gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25); //vuelvo a cargarolo
+gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25); //clono el producto
 
 console.log(gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25)); // Devuelve error de codigo de producto repetido
 
-console.log(gestor.getProductById(1));
+console.log(gestor.getProductById(0));//Genera error o entrega el producto
 
 
