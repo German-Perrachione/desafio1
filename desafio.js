@@ -29,7 +29,7 @@ class Product{
     addProduct = (titulo,descripcion,precio,imagen,codigo,stock)=>{
         
 
-        if(this.products.some(p => p.codigo === Product.codigo)) 
+        if(this.products.some(p => p.codigo === p.codigo)) 
             return "Error: Código de producto repetido"
             this.products.push(titulo,descripcion,precio,imagen,codigo,stock);
 
@@ -48,7 +48,7 @@ class Product{
     if(this.products.some(p => p.id===id)){
         return Product;
     }else{
-        error('Producto inexistente');
+        console.Error('Producto inexistente');
     }
 
 }
@@ -61,7 +61,14 @@ const gestor = new ProductManager()
 
 console.log(gestor.getProducts()); //Me devuelve un array vacio.
 
-gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25);
-console.log(gestor.getProducts());
-gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25);
-console.log(gestor.getProducts());
+gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25);// agrego un producto
+
+console.log(gestor.getProducts()); // Muestra el producto
+
+gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25); //vuelvo a cargarolo
+
+console.log(gestor.addProduct("producto prueba", "Este es un producto prueba", 200,"Sin imagen", "abc123", 25)); // Devuelve error de codigo de producto repetido
+
+console.log(gestor.getProductById(1));
+
+
